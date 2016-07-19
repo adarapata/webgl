@@ -285,8 +285,6 @@ onload = function(){
 
 			// 生成したテクスチャをグローバル変数に代入
 			texture = tex;
-
-      alert(texture);
 		};
 
 		// イメージオブジェクトのソースを指定
