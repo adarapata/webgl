@@ -5,8 +5,8 @@
 onload = function(){
 	// canvasエレメントを取得
 	var c = document.getElementById('canvas');
-	c.width = 500;
-	c.height = 300;
+	c.width = 512;
+	c.height = 512;
 
 	// webglコンテキストを取得
 	var gl = c.getContext('webgl') || c.getContext('experimental-webgl');
