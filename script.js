@@ -100,7 +100,7 @@ onload = function(){
 	var texture = null;
 
 	// テクスチャを生成
-	create_texture('kinniku');
+	create_texture('kinniku_hanasu.png');
 
 	// カウンタの宣言
 	var count = 0;
@@ -288,11 +288,9 @@ onload = function(){
 
       alert(texture);
 		};
-		var target = document.getElementById("kinniku");
 
 		// イメージオブジェクトのソースを指定
-		img.src = "https://chicappa-shicappa.ssl-lolipop.jp/kinniku_hanasu.png";
-    img.crossOrigin = "Anonymas";
+		img.src = source;
 	}
 
 };
