@@ -35,8 +35,6 @@ const vec3  monochromeScale = vec3(redScale, greenScale, blueScale);
 
 void main(void){
 	vec4 smpColor = texture2D(texture, vTextureCoord);
-  float grayColor = dot(smpColor.rgb, monochromeScale);
-  smpColor = vec4(vec3(grayColor), 1.0);
 	gl_FragColor  = vColor * smpColor;
 }
 		</script>
