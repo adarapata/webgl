@@ -32,11 +32,30 @@ const float redScale   = 0.298912;
 const float greenScale = 0.586611;
 const float blueScale  = 0.114478;
 const vec3  monochromeScale = vec3(redScale, greenScale, blueScale);
+const float mosaicScale = 3.0;
 
 void main(void){
 	vec4 smpColor = texture2D(texture, vTextureCoord);
 	gl_FragColor  = vColor * smpColor;
 }
+
+/* モザイク
+void main(void) {
+	float offsetX = mod(vTextureCoord.x, 4.0 * 0.01);
+	float offsetY = mod(vTextureCoord.y, 4.0 * 0.01);
+	vec4 destColor = texture2D(texture, vTextureCoord - vec2(offsetX, offsetY));
+	gl_FragColor  = destColor;
+}
+*/
+
+/* グレイスケール
+void main(void) {
+	vec4 smpColor = texture2D(texture, vTextureCoord);
+	float grayColor = dot(smpColor.rgb, monochromeScale);
+  smpColor = vec4(vec3(grayColor), 1.0);	float offsetX = mod(vTextureCoord.x, 4.0 * 0.01);
+	gl_FragColor  = vColor * smpColor;
+}
+*/
 		</script>
 	</head>
 	<body>
